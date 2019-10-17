@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import com.kelompok3.misapps.Fragments.AboutFragment;
+import com.kelompok3.misapps.Fragments.Galery_Video;
 import com.kelompok3.misapps.Fragments.HomeFragment;
 import com.kelompok3.misapps.Fragments.KaryawanFragment;
 import com.kelompok3.misapps.Fragments.OfficeFragment;
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     final Fragment homeFragment = new HomeFragment();
     final Fragment karyawanFragment = new KaryawanFragment();
     final Fragment officeFragment = new OfficeFragment();
+    final Fragment GaleryVideo = new Galery_Video();
 
     FragmentManager fragmentManager = getSupportFragmentManager();
 
@@ -64,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
         cell_phone = getIntent().getStringExtra("cell_phone");
 
         fragmentManager.beginTransaction().add(R.id.frameLayout, aboutFragment, aboutFragment.getClass().getSimpleName()).hide(aboutFragment).commit();
+        fragmentManager.beginTransaction().add(R.id.frameLayout, GaleryVideo, GaleryVideo.getClass().getSimpleName()).hide(GaleryVideo).commit();
         fragmentManager.beginTransaction().add(R.id.frameLayout, karyawanFragment, karyawanFragment.getClass().getSimpleName()).hide(karyawanFragment).commit();
         fragmentManager.beginTransaction().add(R.id.frameLayout, officeFragment, officeFragment.getClass().getSimpleName()).hide(officeFragment).commit();
         fragmentManager.beginTransaction().add(R.id.frameLayout, homeFragment, homeFragment.getClass().getSimpleName()).commit();
@@ -85,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
                         new PrimaryDrawerItem().withName("About").withIcon(GoogleMaterial.Icon.gmd_info).withSelectable(true),
                         new PrimaryDrawerItem().withName("Daftar Karyawan").withIcon(GoogleMaterial.Icon.gmd_person).withSelectable(true),
                         new PrimaryDrawerItem().withName("Daftar Office").withIcon(GoogleMaterial.Icon.gmd_work).withSelectable(true),
+                        new PrimaryDrawerItem().withName("Galery Video").withIcon(GoogleMaterial.Icon.gmd_video_library).withSelectable(true),
                         new PrimaryDrawerItem().withName("Keluar").withIcon(GoogleMaterial.Icon.gmd_exit_to_app).withSelectable(true)
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
@@ -112,6 +116,11 @@ public class MainActivity extends AppCompatActivity {
                                 active = officeFragment;
                                 break;
                             case 5:
+                                //daftar galery video
+                                fragmentManager.beginTransaction().hide(active).show(GaleryVideo).commit();
+                                active = GaleryVideo;
+                                break;
+                            case 6:
                                 //keluar
                                 break;
                         }
