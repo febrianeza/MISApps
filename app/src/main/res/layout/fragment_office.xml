@@ -6,10 +6,22 @@
     tools:context=".Fragments.OfficeFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Office Fragment" />
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp">
 
+        <GridView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:stretchMode="columnWidth"
+            android:alignmentMode="alignMargins"
+            android:numColumns="auto_fit"
+            android:padding="15dp"
+            android:id="@+id/office"
+            android:verticalSpacing="10dp"
+            android:horizontalSpacing="10dp"
+            >
+        </GridView>
+    </LinearLayout>
 </FrameLayout>
