@@ -4,8 +4,11 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -37,20 +40,38 @@ public class LoginActivity extends AppCompatActivity {
     Service service;
 
     TinyDB tinyDB = null;
+    private CheckBox ShowPass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
-
         service = API.getClient().create(Service.class);
+        final EditText et_password = findViewById(R.id.etPassword);
+
+        ShowPass = findViewById(R.id.showpass);
+
+        //Set onClickListener, untuk menangani kejadian saat Checkbox diklik
+        ShowPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(ShowPass.isChecked()){
+                    //Saat Checkbox dalam keadaan Checked, maka password akan di tampilkan
+                    et_password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                }else {
+                    //Jika tidak, maka password akan di sembuyikan
+                   et_password.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                }
+            }
+        });
     }
 
     @OnClick(R.id.btnLogin)
     public void doLogin(View view) {
         String cell_phone = etPhoneNumber.getText().toString();
         String password = etPassword.getText().toString();
+
 
         Call<JsonObject> authRequest = service.getAuth(
                 cell_phone,
