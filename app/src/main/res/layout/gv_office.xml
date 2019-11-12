@@ -24,5 +24,6 @@
         android:layout_height="wrap_content"
         android:minLines="3"
         android:maxLines="3"
+        android:textColor="#000"
         android:text="Nama Kantor" />
 </LinearLayout>

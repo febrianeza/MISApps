@@ -47,6 +47,7 @@
                 android:layout_below="@+id/img_kantor"
                 android:text="PT MULTI INTI SARANA"
                 android:id="@+id/title"
+                android:textColor="#000"
                 android:textStyle="bold"
                 android:gravity="center"
                 android:layout_marginBottom="15dp"
@@ -64,6 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/title"
+                android:textColor="#000"
                 android:textStyle="bold"
                 android:id="@+id/title_description"
                 android:text="Tentang Perusahaan"
@@ -76,6 +78,8 @@
                 android:id="@+id/description"
                 android:text="PT MULTI INTI SARANA merupakan salah satu gedung yang dibangun oleh Toda Corporation, perusahaan Jepang yang bekerja sama dengan perusahaan lokal. Toda Corporation sudah beroperasi lebih dari satu abad, dan mereka pun melebarkan sayap ke Brasil, Amerika, dan beberapa negara Asia Tenggara, termasuk Indonesia. Wisma Keiai yang berlokasi di kawasan Sudirman, Jakarta Pusat, didirikan di tahun 1993"
                 android:justificationMode="inter_word"
+                android:textColor="#000"
+                android:layout_marginTop="5dp"
                 android:layout_marginBottom="15dp"
                 />
             <View
@@ -92,6 +96,7 @@
                 android:layout_below="@+id/description"
                 android:textStyle="bold"
                 android:id="@+id/title_info"
+                android:textColor="#000"
                 android:text="Informasi Perusahaan"
                 android:layout_marginBottom="5dp"
                 />
