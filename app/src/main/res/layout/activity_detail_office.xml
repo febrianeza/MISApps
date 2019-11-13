@@ -97,37 +97,36 @@
                 />
 
             <!--Membuat Button untuk telepon dan email-->
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <Button
-                    android:layout_alignParentLeft="true"
-                    android:textColor="@android:color/tab_indicator_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/button_phone"
-                    android:drawableLeft="@drawable/ic_phone"
-                    android:gravity="center_vertical"
-                    android:drawablePadding="10dp"
-                    android:text="085711111111"
-                    android:textAllCaps="false"
-                    android:background="@android:color/transparent"
-                    />
-                <Button
-                    android:layout_alignParentRight="true"
-                    android:textColor="@android:color/tab_indicator_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/button_email"
-                    android:drawableLeft="@drawable/ic_mail"
-                    android:text="multiintisarana@gmail.com"
-                    android:drawablePadding="10dp"
-                    android:gravity="center_vertical"
-                    android:textAllCaps="false"
-                    android:background="@android:color/transparent"
-                    />
-            </RelativeLayout>
+            <Button
+                android:layout_alignParentLeft="true"
+                android:textColor="@android:color/tab_indicator_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button_phone"
+                android:drawableLeft="@drawable/ic_phone"
+                android:gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:text="085711111111"
+                android:textAllCaps="false"
+                android:background="@android:color/transparent"
+                style="?android:attr/borderlessButtonStyle"
+                />
+            <Button
+                android:layout_alignParentRight="true"
+                android:textColor="@android:color/tab_indicator_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button_email"
+                android:drawableLeft="@drawable/ic_mail"
+                android:text="multiintisarana@gmail.com"
+                android:drawablePadding="10dp"
+                android:gravity="center_vertical"
+                android:textAllCaps="false"
+                android:background="@android:color/transparent"
+                style="?android:attr/borderlessButtonStyle"
+                />
 
+            <!--Lokasi Perusahaan-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
