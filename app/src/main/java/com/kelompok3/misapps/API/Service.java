@@ -21,6 +21,5 @@ public interface Service {
     Call<JsonObject> getEmployee();
 
     @POST("office")
-    @FormUrlEncoded
     Call<JsonObject> getOffice();
 }

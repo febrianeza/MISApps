@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.DetailOfficeActivity">
+
+    <!--Membuat Toolbar-->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/white"
+        android:elevation="4dp">
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!--Membuat Isi dari Detail-->
+    <ScrollView
+        android:padding="10dp"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/ic_launcher"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="15dp"
+                android:id="@+id/img_kantor"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_kantor"
+                android:text="PT MULTI INTI SARANA"
+                android:id="@+id/title"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="15dp"
+                />
+            <!--Membuat Garis lurus horizontal-->
+            <View
+                android:layout_above="@+id/title_info"
+                android:background="@color/colorPrimaryDark"
+                android:layout_width = "fill_parent"
+                android:layout_height="1dip"
+                android:layout_centerVertical ="true"
+                />
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:textStyle="bold"
+                android:id="@+id/title_description"
+                android:text="Tentang Perusahaan"
+                android:layout_marginBottom="5dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title_description"
+                android:id="@+id/description"
+                android:text="PT MULTI INTI SARANA merupakan salah satu gedung yang dibangun oleh Toda Corporation, perusahaan Jepang yang bekerja sama dengan perusahaan lokal. Toda Corporation sudah beroperasi lebih dari satu abad, dan mereka pun melebarkan sayap ke Brasil, Amerika, dan beberapa negara Asia Tenggara, termasuk Indonesia. Wisma Keiai yang berlokasi di kawasan Sudirman, Jakarta Pusat, didirikan di tahun 1993"
+                android:justificationMode="inter_word"
+                android:layout_marginBottom="15dp"
+                />
+            <View
+                android:layout_below="@+id/title"
+                android:background="@color/colorPrimaryDark"
+                android:layout_width = "fill_parent"
+                android:layout_height="1dip"
+                android:layout_centerVertical ="true"
+                />
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/description"
+                android:textStyle="bold"
+                android:id="@+id/title_info"
+                android:text="Informasi Perusahaan"
+                android:layout_marginBottom="5dp"
+                />
+
+            <!--Membuat Button untuk telepon dan email-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:layout_alignParentLeft="true"
+                    android:textColor="@android:color/tab_indicator_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button_phone"
+                    android:drawableLeft="@drawable/ic_phone"
+                    android:gravity="center_vertical"
+                    android:drawablePadding="10dp"
+                    android:text="085711111111"
+                    android:textAllCaps="false"
+                    android:background="@android:color/transparent"
+                    />
+                <Button
+                    android:layout_alignParentRight="true"
+                    android:textColor="@android:color/tab_indicator_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button_email"
+                    android:drawableLeft="@drawable/ic_mail"
+                    android:text="multiintisarana@gmail.com"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:textAllCaps="false"
+                    android:background="@android:color/transparent"
+                    />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:id="@+id/address"
+                android:drawableLeft="@drawable/ic_location_on"
+                android:drawablePadding="10dp"
+                android:text="Jl. Gatot Subroto No.Kav 56, RT.1/RW.4, Kuningan Tim., Kecamatan Setiabudi, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12950"
+                android:justificationMode="inter_word"
+                />
+
+            <!--Membuat Map-->
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="400dp"
+                android:layout_below="@id/address"
+                android:id="@+id/map_container">
+
+                <View
+                    android:layout_below="@+id/title"
+                    android:background="@color/colorPrimaryDark"
+                    android:layout_width = "fill_parent"
+                    android:layout_height="1dip"
+                    android:layout_centerVertical ="true"
+                    />
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title"
+                    android:textStyle="bold"
+                    android:text="Lokasi Pada Map"
+                    android:layout_marginBottom="5dp"
+                    />
+                <com.google.android.gms.maps.MapView
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/user_list_map" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
