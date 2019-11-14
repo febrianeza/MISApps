@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.viewpager.widget.ViewPager;
 
 import com.kelompok3.misapps.Fragments.AboutFragment;
 import com.kelompok3.misapps.Fragments.Galeri_Foto;
@@ -25,6 +26,9 @@ import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -51,12 +55,20 @@ public class MainActivity extends AppCompatActivity {
     Fragment active = homeFragment;
 
     String full_name, email, cell_phone;
+    ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        viewPager = (ViewPager) findViewById(R.id.viewPager);
+        viewPagerAdapter viewPagerAdapter = new viewPagerAdapter(this);
+        viewPager.setAdapter(viewPagerAdapter);
+
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new MyTimerTask(), 2000, 3000);
 
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
@@ -92,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                         new PrimaryDrawerItem().withName("Daftar Karyawan").withIcon(GoogleMaterial.Icon.gmd_person).withSelectable(true),
                         new PrimaryDrawerItem().withName("Daftar Office").withIcon(GoogleMaterial.Icon.gmd_work).withSelectable(true),
                         new PrimaryDrawerItem().withName("Galery Video").withIcon(GoogleMaterial.Icon.gmd_video_library).withSelectable(true),
-                        new PrimaryDrawerItem().withName("Galery Foto").withIcon(GoogleMaterial.Icon.gmd_image ).withSelectable(true),
+                        new PrimaryDrawerItem().withName("Galery Foto").withIcon(GoogleMaterial.Icon.gmd_image).withSelectable(true),
                         new PrimaryDrawerItem().withName("Keluar").withIcon(GoogleMaterial.Icon.gmd_exit_to_app).withSelectable(true)
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
@@ -136,5 +148,23 @@ public class MainActivity extends AppCompatActivity {
                         return false;
                     }
                 }).build();
+    }
+
+    public class MyTimerTask extends TimerTask {
+        @Override
+        public void run() {
+            MainActivity.this.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    if (viewPager.getCurrentItem() == 0) {
+                        viewPager.setCurrentItem(1);
+                    } else if (viewPager.getCurrentItem() == 1) {
+                        viewPager.setCurrentItem(2);
+                    } else {
+                        viewPager.setCurrentItem(0);
+                    }
+                }
+            });
+        }
     }
 }

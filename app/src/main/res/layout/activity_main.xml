@@ -25,6 +25,156 @@
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scroll1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="OUR STORY"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:layout_marginTop="70dp"
+                android:textAlignment="center"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="194dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shape"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Multi Inti Sarana Group (MIS Group) beroperasi sejak 1997, mengelola grup usaha yang bergerak di bidang usaha premium transportation, tin mining, digital business, dan sharia-based business. MIS Group terus menggeliat dan memainkan peran penting dalam laju pembangunan di berbagai wilayah Tanah Air. Transformasi bisnis menuju grup usaha berbasis teknologi informasi dan inovasi mengukuhkan kehadiran MIS Group sebagai entitas bisnis terkemuka dengan gaya kepemimpinan transformasional."
+                    android:typeface="sans"
+                    android:justificationMode="inter_word"
+                    android:textColor="#ffff"
+                    android:textSize="15sp"/>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:text="MOMENT"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:textAlignment="center"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Pesan Presiden RI pada Peringatan Hari Pahlawan"
+                android:justificationMode="inter_word"
+                android:textColor="#000000"
+                android:typeface="sans"
+                android:textAlignment="center"
+                android:textSize="15sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="“Kewajiban kita bersama sebagai penerus untuk terus mengisi kemerdekaan yang telah diperjuangkan oleh para pahlawan, terutama perjuangan dalam memberantas kemiskinan, kebodohan, keterbelakangan, dan kesenjangan.” – Presiden Joko Widodo"
+                android:textSize="15sp"
+                android:textColor="#000000"
+                android:typeface="sans"
+                android:paddingRight="16dp"
+                android:paddingLeft="16dp"
+                android:justificationMode="inter_word"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="#A9A9A9"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:visibility="visible" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Produk Digital Berbasis Aplikasi dari MDB"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:typeface="sans"
+                android:textSize="15sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Multi Inti Digital Bisnis (MDB) siap melayani masyarakat dengan sejumlah produk digital berbasis aplikasi, seperti:
+\n1. Multi Inti Digital Transportasi (Capsule Bus)
+\n2. Multi Inti Digital Lestari (E-Recycle)
+\n3. Sistim Digital Transaksi Indonesia (Digital Cooperative)
+\n4. Sistim Digital Loyalti Indonesia (PrivilegeID)
+\n5. Multi Inti Digital Logistik (Digital Logistics)"
+                android:justificationMode="inter_word"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:textSize="15sp"
+                android:textColor="#000000"
+                android:typeface="sans"/>
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="194dp"
+                android:layout_marginTop="120dp"
+                android:background="@drawable/rec"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginBottom="5dp"
+                    android:paddingLeft="16dp"
+                    android:src="@drawable/misgroup" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="75dp"
+                    android:text="Multi Inti Sarana Group"
+                    android:textSize="12sp"
+                    android:textColor="#000000"
+                    android:paddingLeft="16dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:text="Graha Surveyor Indonesia Lantai 18 Suite 1802-C \nJln. Gatot Subroto Kav. 56 Jakarta Selatan 12950 \nPhone: 021 5296 0452, 5296 0457 \nEmail: greet@multiintisarana.com \nwww.multiintisarana.com"
+                    android:textSize="12sp"
+                    android:textColor="#000000"
+                    android:paddingLeft="16dp"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>>
+
+
+    </FrameLayout>
 
 </LinearLayout>
