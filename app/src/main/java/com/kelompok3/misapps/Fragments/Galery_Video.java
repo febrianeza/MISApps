@@ -50,6 +50,8 @@ public class Galery_Video extends Fragment {
         webViewSaya.getSettings().setJavaScriptEnabled(true);
         webViewSaya.getSettings().setPluginState(WebSettings.PluginState.ON);
         webViewSaya.getSettings().setDefaultFontSize(18);
+        webViewSaya.getSettings().setLoadWithOverviewMode(true);
+        webViewSaya.getSettings().setUseWideViewPort(true);
 
         final Button button = (Button) rootView.findViewById(R.id.btnVideo1);
         button.setOnClickListener(new View.OnClickListener() {
@@ -122,7 +124,7 @@ public class Galery_Video extends Fragment {
 
     private void muatVideo (String kode_youtube){
         String kodeHTML = "<head></head><body>" +
-                "<iframe width=\"355\" height=\"261\" src=\"https://www.youtube.com/embed/" +
+                "<iframe  width=\""+ webViewSaya.getWidth() +"\" height=\""+ webViewSaya.getHeight()+"\"src=\"https://www.youtube.com/embed/" +
                 kode_youtube +
                 "\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>" +
                 "</body>";
