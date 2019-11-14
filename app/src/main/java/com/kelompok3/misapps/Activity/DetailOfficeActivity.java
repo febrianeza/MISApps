@@ -135,7 +135,7 @@ public class DetailOfficeActivity extends AppCompatActivity implements OnMapRead
 
     @Override
     public void onMapReady(GoogleMap map) {
-        map.addMarker(new MarkerOptions().position(new LatLng(latitude, longitude)).title("Marker"));
+        map.addMarker(new MarkerOptions().position(new LatLng(latitude, longitude)).title("Lokasi Kantor"));
 
         //Melakukan zoom
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(latitude, longitude),15));
